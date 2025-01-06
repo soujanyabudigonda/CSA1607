@@ -1,0 +1,4 @@
+# Plot multiple lines
+plot(mtcars$mpg, type = "o", col = "blue", xlab = "Index", ylab = "Value", main = "Multiple Lines")
+lines(mtcars$qsec, type = "o", col = "red")
+legend("topright", legend = c("mpg", "qsec"), col = c("blue", "red"), lty = 1)
