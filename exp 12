@@ -1,0 +1,27 @@
+# Input data
+preferences <- data.frame(
+  Age = c("5-6", "7-8", "9-10"),
+  A = c(18, 2, 20),
+  B = c(22, 28, 10),
+  C = c(20, 40, 40)
+)
+
+# Covariance between B and C
+cov_bc <- cov(preferences$B, preferences$C)
+
+# Covariance matrix
+cov_matrix <- cov(preferences[, 2:4])
+
+# Correlation between B and C
+cor_bc <- cor(preferences$B, preferences$C)
+
+# Correlation matrix
+cor_matrix <- cor(preferences[, 2:4])
+
+# Output
+cat("Covariance (B, C):", cov_bc, "\n")
+cat("Covariance Matrix:\n")
+print(cov_matrix)
+cat("Correlation (B, C):", cor_bc, "\n")
+cat("Correlation Matrix:\n")
+print(cor_matrix)
