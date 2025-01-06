@@ -1,0 +1,12 @@
+# Input: Scores of tennis players
+scores <- c(10, 12, 15, 18, 20, 25, 30, 35, 100)
+
+# Boxplot visualization
+boxplot(scores, 
+        main = "Boxplot of Tennis Players' Scores",
+        ylab = "Scores",
+        col = "lightblue")
+
+# Identify and display outliers
+outliers <- boxplot.stats(scores)$out
+cat("Outliers:", outliers, "\n")
