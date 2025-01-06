@@ -1,0 +1,2 @@
+# AirPassengers histogram
+hist(AirPassengers, breaks = seq(100, 700, by = 150), main = "Histogram of AirPassengers", col = "lightblue", xlab = "Passengers")
