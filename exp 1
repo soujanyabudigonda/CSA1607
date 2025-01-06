@@ -1,0 +1,18 @@
+
+age <- c(5, 15, 20, 50, 80, 110)
+frequency <- c(200, 450, 300, 1500, 700, 44)
+
+# Compute cumulative frequency
+cumulative_freq <- cumsum(frequency)
+N <- sum(frequency)
+median_class <- which(cumulative_freq >= N / 2)[1]
+
+# Median formula components
+L <- ifelse(median_class == 1, 1, age[median_class - 1]) # Lower boundary
+F <- ifelse(median_class == 1, 0, cumulative_freq[median_class - 1])
+f <- frequency[median_class]
+h <- age[2] - age[1]
+
+# Median calculation
+median_value <- L + ((N / 2 - F) / f) * h
+cat("Approximate Median:", median_value, "\n")
