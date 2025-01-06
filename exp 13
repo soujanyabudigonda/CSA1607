@@ -1,0 +1,19 @@
+# Input data
+data <- c(18, 18, 18, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 25, 25, 25, 25, 25, 28, 28, 30, 30, 30)
+
+# Equal-Frequency Partitioning
+bins <- cut(data, breaks = quantile(data, probs = seq(0, 1, length.out = 4)), include.lowest = TRUE)
+
+# Smoothing by bin mean
+mean_smooth <- tapply(data, bins, mean)
+
+# Smoothing by bin boundary
+boundary_smooth <- tapply(data, bins, function(x) c(min(x), max(x)))
+
+# Output
+cat("Equal-Frequency Partitioning:\n")
+print(table(bins))
+cat("\nSmoothing by Bin Mean:\n")
+print(mean_smooth)
+cat("\nSmoothing by Bin Boundary:\n")
+print(boundary_smooth)
