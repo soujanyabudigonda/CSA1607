@@ -1,0 +1,9 @@
+# Input data
+data("water")
+model <- lm(mortality ~ hardness, data = water)
+
+# Prediction
+pred <- predict(model, newdata = data.frame(hardness = 88))
+
+# Output
+cat("Prediction for hardness=88:", pred, "\n")
