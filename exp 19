@@ -1,0 +1,6 @@
+# Boxplot of mpg vs cyl
+boxplot(mpg ~ cyl, data = mtcars, 
+        main = "Boxplot of mpg by cyl",
+        xlab = "Number of Cylinders",
+        ylab = "Miles per Gallon (mpg)",
+        col = c("lightblue", "lightgreen", "lightpink"))
